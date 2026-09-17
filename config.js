@@ -227,7 +227,7 @@ window.STORY_CONFIG = {
 
       "Thank u ji enete life il kerri vann life thanne matti nee. Enik arilla orr chane inn ann ingane cheythe ella thavaneyum letter alle njn namma meet up vekkind allo appo thara vicharichu but ath nalla nerthe alle appo ninet kayil thanna nee apppo thanne thorkum kazhutha 😂❤️",
 
-      "Happy Birthday aliyaa ❤️"
+      "Entha aliya impress ayyo show enne kond enik thanne thott kore cheyanam vech ai limit adikann thengaaaa well Happy Birthday aliyaaand ummaaaaaaaa❤️"
     ],
 
     signoff: "Forever & Always Yours, puttus ❤️",
@@ -250,7 +250,7 @@ window.STORY_CONFIG = {
   memoryWall: [
     {
       caption: "My fav donkey ilu kazhuthe",
-      note: "ah nilpp nokknne 😂",
+      note: "maaa Queennn ",
       imageUrl: "assets/memory1.jpg"
     },
 
