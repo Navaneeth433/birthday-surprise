@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 22nd Birthday Nayana! 💖 | Our Story Adventure</title>
+  <meta name="description" content="A personalized birthday puzzle adventure created for Nayana Binu Plachikattil's 22nd Birthday!">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+</head>
+<body>
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <!-- Main Application Wrapper -->
+  <div class="app-container">
+    
+    <!-- Top Navigation Bar -->
+    <header class="top-navbar">
+      <div class="brand-badge">
+        <span>💖</span>
+        <span id="nav-brand-text">Nayana's 22nd Birthday</span>
+      </div>
+      <div class="top-actions">
+        <button id="btn-audio-toggle" class="icon-btn" title="Toggle Background Music">
+          <span id="audio-icon">🎵</span>
+        </button>
+        <button id="btn-customize-toggle" class="icon-btn" title="Customize Story & Questions">
+          <span>⚙️</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Milestone Progress Tracker -->
+    <div class="progress-bar-container" id="progress-container">
+      <div class="progress-header">
+        <span>Our Memory Quest Progress</span>
+        <span id="progress-percentage-text">0% Unlocked</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="milestone-badges">
+        <div class="badge-step active" data-step="1" id="step-badge-1">
+          <div class="badge-icon">1</div>
+          <span class="badge-label">Timeline</span>
+        </div>
+        <div class="badge-step" data-step="2" id="step-badge-2">
+          <div class="badge-icon">2</div>
+          <span class="badge-label">Photos</span>
+        </div>
+        <div class="badge-step" data-step="3" id="step-badge-3">
+          <div class="badge-icon">3</div>
+          <span class="badge-label">Quiz</span>
+        </div>
+        <div class="badge-step" data-step="4" id="step-badge-4">
+          <div class="badge-icon">4</div>
+          <span class="badge-label">Cipher</span>
+        </div>
+        <div class="badge-step" data-step="5" id="step-badge-5">
+          <div class="badge-icon">💌</div>
+          <span class="badge-label">Letter</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 0: LANDING PAGE -->
+    <!-- =================================================================== -->
+    <section id="screen-landing" class="view-screen active">
+      <div class="cute-card hero-card">
+        <div class="badge-age">✨ Turning 22 Tomorrow! ✨</div>
+        <div class="hero-avatar-ring">
+          <div class="hero-avatar-inner">👑</div>
+        </div>
+        <h1 class="hero-title">Hey <span id="hero-name-display">Nayana</span>...</h1>
+        <p class="hero-subtitle" id="hero-sub-text">
+          Someone has locked your official 22nd birthday surprise! To unlock your final letter & celebration, you'll have to solve our 4-chapter relationship story quest. ❤️
+        </p>
+        <button id="btn-start-quest" class="btn-pink">
+          <span>Start Our Quest</span>
+          <span>🚀</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 1: LEVEL 1 — TIMELINE QUIZ -->
+    <!-- =================================================================== -->
+    <section id="screen-level1" class="view-screen">
+      <div class="cute-card">
+        <div class="section-header">
+          <h2 class="section-title" id="l1-title">Chapter 1: Where It All Began 🕰️</h2>
+          <p class="section-subtitle" id="l1-subtitle">Answer these milestone questions to unlock our memory road!</p>
+        </div>
+
+        <div id="l1-questions-container" class="timeline-list">
+          <!-- Dynamically generated timeline questions -->
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <button id="btn-l1-next" class="btn-pink" style="display: none;">
+            <span>Unlock Chapter 2 (Photo Memories)</span>
+            <span>📸</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 2: LEVEL 2 — GUESS THE MEMORY PHOTO QUIZ -->
+    <!-- =================================================================== -->
+    <section id="screen-level2" class="view-screen">
+      <div class="cute-card">
+        <div class="section-header">
+          <h2 class="section-title" id="l2-title">Chapter 2: Guess the Memory 📸</h2>
+          <p class="section-subtitle" id="l2-subtitle">Unblur these polaroids by recalling where we were!</p>
+        </div>
+
+        <div id="l2-cards-container" class="photo-quiz-grid">
+          <!-- Dynamically generated photo quiz polaroids -->
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <button id="btn-l2-next" class="btn-pink" style="display: none;">
+            <span>Unlock Chapter 3 (Relationship Quiz)</span>
+            <span>❤️</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 3: LEVEL 3 — HOW WELL DO YOU KNOW US? -->
+    <!-- =================================================================== -->
+    <section id="screen-level3" class="view-screen">
+      <div class="cute-card">
+        <div class="section-header">
+          <h2 class="section-title" id="l3-title">Chapter 3: How Well Do You Know Us? ❤️</h2>
+          <p class="section-subtitle" id="l3-subtitle">Answer these romantic & funny relationship questions!</p>
+        </div>
+
+        <div id="l3-questions-container" class="timeline-list">
+          <!-- Dynamically generated multiple choice quiz -->
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <button id="btn-l3-next" class="btn-pink" style="display: none;">
+            <span>Unlock Chapter 4 (Final Cipher)</span>
+            <span>🔐</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 4: LEVEL 4 — CRACK THE CODE VAULT -->
+    <!-- =================================================================== -->
+    <section id="screen-level4" class="view-screen">
+      <div class="cute-card">
+        <div class="section-header">
+          <h2 class="section-title" id="l4-title">Chapter 4: Crack the Secret Cipher 🔐</h2>
+          <p class="section-subtitle" id="l4-subtitle">Combine our special clues to enter the vault passcode!</p>
+        </div>
+
+        <div class="vault-container">
+          <div class="lock-icon-wrapper" id="vault-lock-icon">🔒</div>
+
+          <div id="l4-clues-list" style="margin-bottom: 20px; text-align: left; background: #FFF0F3; padding: 16px; border-radius: 14px;">
+            <!-- Cipher clue list -->
+          </div>
+
+          <div class="passcode-inputs" id="passcode-inputs-wrapper">
+            <!-- 8 passcode single char boxes -->
+          </div>
+
+          <div style="margin-top: 16px;">
+            <button id="btn-verify-cipher" class="btn-pink">
+              <span>Unlock Birthday Letter 🔑</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 5: THE BIRTHDAY LETTER REVEAL -->
+    <!-- =================================================================== -->
+    <section id="screen-letter" class="view-screen">
+      <div class="letter-wrapper">
+        <div style="text-align: center; font-size: 3rem; margin-bottom: 10px;">💌</div>
+        <h2 class="letter-heading" id="letter-heading-display">Happy 22nd Birthday, My Dearest Nayana!</h2>
+        
+        <div class="letter-body" id="letter-typed-body">
+          <!-- Letter content dynamically rendered -->
+        </div>
+
+        <div class="letter-signature" id="letter-signature-display">
+          Forever & Always Yours ❤️
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button id="btn-to-cake" class="btn-pink">
+          <span>One Last Surprise → Virtual Birthday Cake 🎂</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SCREEN 6: VIRTUAL 22nd BIRTHDAY CAKE & PHOTO WALL -->
+    <!-- =================================================================== -->
+    <section id="screen-cake" class="view-screen">
+      <div class="cute-card cake-wrapper">
+        <h2 class="section-title" id="cake-title-display">Make a Wish, Nayana! 🎂✨</h2>
+        <p class="section-subtitle" id="cake-sub-display" style="margin-bottom: 24px;">
+          Blow out your 22 birthday candles to trigger your grand fireworks!
+        </p>
+
+        <!-- Cake Illustration with flickering candles -->
+        <div class="cake-illustration">
+          <div class="candles-row" id="candles-container">
+            <!-- Visual candles -->
+          </div>
+          <div class="cake-frosting"></div>
+          <div class="cake-base"></div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <button id="btn-blow-candles" class="btn-pink">
+            <span>Blow Out Candles 🌬️✨</span>
+          </button>
+          <button id="btn-replay-quest" class="btn-secondary">
+            <span>Replay Our Quest 🔄</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Photo Memory Wall / Polaroids -->
+      <div class="cute-card">
+        <h3 class="section-title" style="text-align: center; margin-bottom: 16px;">Our Memory Wall 📸</h3>
+        <div id="memory-wall-grid" class="photo-quiz-grid">
+          <!-- Memory wall cards -->
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- MODAL: INSTANT SWEET / TAUNT FEEDBACK -->
+  <!-- =================================================================== -->
+  <div class="modal-overlay" id="feedback-modal">
+    <div class="modal-content" style="text-align: center; max-width: 440px;">
+      <div id="modal-emoji" style="font-size: 3.5rem; margin-bottom: 12px;">🎉</div>
+      <h3 id="modal-title" class="section-title" style="margin-bottom: 10px;">Sweet Memory Unlocked!</h3>
+      <p id="modal-text" style="font-size: 1rem; color: var(--text-muted); margin-bottom: 20px;">
+        You got it right!
+      </p>
+      <button id="btn-close-feedback" class="btn-pink">
+        <span>Continue ❤️</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- MODAL: CUSTOMIZE STORY DRAWER -->
+  <!-- =================================================================== -->
+  <div class="modal-overlay" id="customizer-modal">
+    <div class="modal-content">
+      <button class="close-modal" id="btn-close-customizer">&times;</button>
+      <h3 class="section-title" style="margin-bottom: 16px;">⚙️ Customize Nayana's Story</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+        Edit her name, age, letter text, photo paths, or secret cipher password live in your browser!
+      </p>
+      
+      <form id="customizer-form">
+        <div class="form-group">
+          <label class="form-label">Girlfriend's Full Name</label>
+          <input type="text" id="cfg-name" class="form-control" value="Nayana Binu Plachikattil">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Turning Age</label>
+          <input type="number" id="cfg-age" class="form-control" value="22">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Photo Quiz Image #1 Path or URL</label>
+          <input type="text" id="cfg-img1" class="form-control" value="assets/photo1.jpg" placeholder="assets/photo1.jpg or image URL">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Photo Quiz Image #2 Path or URL</label>
+          <input type="text" id="cfg-img2" class="form-control" value="assets/photo2.jpg" placeholder="assets/photo2.jpg or image URL">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Level 4 Passcode Cipher</label>
+          <input type="text" id="cfg-passcode" class="form-control" value="NAYANA22">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Birthday Letter Text</label>
+          <textarea id="cfg-letter-text" class="form-control" rows="5"></textarea>
+        </div>
+        <div style="text-align: right; margin-top: 20px;">
+          <button type="submit" class="btn-pink">Save Custom Changes ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
